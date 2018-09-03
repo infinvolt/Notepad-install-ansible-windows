@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+   - name: download notepadd++
+     win_get_url:
+         url: https://notepad-plus-plus.org/repository/7.x/7.5.8/npp.7.5.8.Installer.exe
+         dest: C:\
+   - name: install
+     win_package:
+         path: C:\npp.7.5.8.Installer.exe
+         productid: auto
+         state: present
+     register: output
+   - debug: var=output 
