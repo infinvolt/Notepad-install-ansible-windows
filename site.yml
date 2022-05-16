@@ -3,11 +3,11 @@
   tasks:
    - name: download notepadd++
      win_get_url:
-         url: https://notepad-plus-plus.org/repository/7.x/7.5.8/npp.7.5.8.Installer.exe
+         url: https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.4.1/npp.8.4.1.Installer.x64.exe
          dest: C:\
    - name: install
      win_package:
-         path: C:\npp.7.5.8.Installer.exe
+         path: C:\npp.8.4.1.Installer.x64.exe
          productid: auto
          state: present
      register: output
